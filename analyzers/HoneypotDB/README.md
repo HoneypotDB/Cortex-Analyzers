@@ -1,5 +1,5 @@
 ### HoneypotDB
-[HoneypotDB](https://honeypotdb.com/) provides clear and actionable threat intelligence based on the real-world activity of cyber adversaries, driven by a global networ of honeypots.
+Driven by a global network of Honeypots [HoneypotDB](https://honeypotdb.com/) tracks the behaviours of attackers in the wild, providing evidence-based threat severity scores and logs from actual attacks performed by attackers.
 
 
 #### Requirements
