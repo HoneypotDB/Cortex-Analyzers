@@ -1,34 +1,40 @@
 {
-    "name": "HoneypotDB",
-    "version": "1.0",
-    "author": "HoneypotDB Ltd",
-    "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
-    "license": "AGPL-v3",
-    "description": "Fetch an indicator's current Threat Severity Score from the HoneypotDB API",
-    "dataTypeList": ["ip"],
-    "baseConfig": "HoneypotDB",
-    "command": "HoneypotDB/honeypotdb.py",
-    "configurationItems": [
-      {
-        "name": "API-KEY",
-        "description": "API key for HoneypotDB",
-        "type": "string",
-        "multi": false,
-        "required": true
-      }
-    ],
-    "config": {
-        "check_tlp": false,
-        "auto_extract": false
-    },
-    "registration_required": true,
-    "subscription_required": true,
-    "free_subscription": true,
-    "service_homepage": "https://honeypotdb.com/",
-    "service_logo": {
-        "path": "assets/honeypotdb.png",
-        "caption": "HoneypotDB Logo"
-    },
-    "screenshots": [],
-    "dockerImage": "honeypotdb/HoneypotDBAnalyzer:latest"
+  "name": "honeypotdb",
+  "version": "1.0",
+  "author": "HoneypotDB Ltd",
+  "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
+  "license": "AGPL-v3",
+  "description": "Fetch an indicator's current Threat Severity Score from the HoneypotDB API",
+  "dataTypeList": [
+    "ip"
+  ],
+  "baseConfig": "HoneypotDB",
+  "command": "HoneypotDB/honeypotdb.py",
+  "configurationItems": [
+    {
+      "name": "API-KEY",
+      "description": "API key for HoneypotDB",
+      "type": "string",
+      "multi": false,
+      "required": true
+    }
+  ],
+  "config": {
+    "check_tlp": false,
+    "auto_extract": false
+  },
+  "registration_required": true,
+  "subscription_required": true,
+  "free_subscription": true,
+  "service_homepage": "https://honeypotdb.com/",
+  "service_logo": {
+    "path": "assets/honeypotdb.png",
+    "caption": "HoneypotDB Logo"
+  },
+  "screenshots": [
+    {
+        "path": "assets/job_details_1.png",
+        "caption": "HoneypotDB Job Details Report"
+    }
+  ]
 }
