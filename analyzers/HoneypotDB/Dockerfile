@@ -1,5 +1,5 @@
 FROM python:3
 WORKDIR /worker
-COPY . Honeypotdb
-RUN test ! -e Honeypotdb/requirements.txt || pip install --no-cache-dir -r Honeypotdb/requirements.txt
+COPY . HoneypotDB
+RUN test ! -e HoneypotDB/requirements.txt || pip install --no-cache-dir -r HoneypotDB/requirements.txt
 ENTRYPOINT HoneypotDB/honeypotdb.py
