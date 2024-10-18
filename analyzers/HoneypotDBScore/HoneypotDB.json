@@ -1,19 +1,21 @@
 {
-  "name": "honeypotdb",
+  "name": "honeypotdbscore",
   "version": "1.0",
   "author": "HoneypotDB Ltd",
   "url": "https://github.com/TheHive-Project/Cortex-Analyzers",
   "license": "AGPL-v3",
-  "description": "Fetch an indicator's current Threat Severity Score from the HoneypotDB API",
+  "description": "Fetch an indicator's current Threat Severity Score from the HoneypotDB Score API",
   "dataTypeList": [
-    "ip"
+    "ip",
+    "hash",
+    "other"
   ],
-  "baseConfig": "HoneypotDB",
-  "command": "HoneypotDB/honeypotdb.py",
+  "baseConfig": "HoneypotDBScore",
+  "command": "HoneypotDBScore/honeypotdb.py",
   "configurationItems": [
     {
       "name": "API-KEY",
-      "description": "API key for HoneypotDB",
+      "description": "API key for HoneypotDB Score API. Requires the score:read role",
       "type": "string",
       "multi": false,
       "required": true
@@ -34,7 +36,7 @@
   "screenshots": [
     {
         "path": "assets/job_details_1.png",
-        "caption": "HoneypotDB Job Details Report"
+        "caption": "HoneypotDB Score Job Details Report"
     }
   ]
 }

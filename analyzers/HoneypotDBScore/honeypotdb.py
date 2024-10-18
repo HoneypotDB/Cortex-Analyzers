@@ -2,10 +2,12 @@
 
 import requests
 
+from ipaddress import ip_address, IPv4Address, IPv6Address
+
 from cortexutils.analyzer import Analyzer
 
 
-class HoneypotDBAnalyzer(Analyzer):
+class HoneypotDBScoreAnalyzer(Analyzer):
     """
     HoneypotDB API docs: https://api.honeypotdb.com/docs
     """
@@ -35,16 +37,17 @@ class HoneypotDBAnalyzer(Analyzer):
 
     def run(self):
 
-        try:
-            if self.data_type == "ip":
-                api_key = self.get_param('config.API-KEY', None, 'Missing HoneypotDB API key')
+        indicator = self.get_data()
 
-                indicator = self.get_data()
+        try:
+            if self.data_type in ["ip", "hash", "other"]:
+                
+                api_key = self.get_param('config.API-KEY', None, 'Missing HoneypotDB API key')
 
                 url = 'https://api.honeypotdb.com/score/scores'
                 headers = {
                     'Accept': 'application/json',
-                    'X-API-KEY': '%s' % api_key }
+                    'X-API-KEY': api_key }
                 
                 params = {'indicator': indicator}
 
@@ -67,4 +70,4 @@ class HoneypotDBAnalyzer(Analyzer):
 
 
 if __name__ == '__main__':
-    HoneypotDBAnalyzer().run()
+    HoneypotDBScoreAnalyzer().run()
